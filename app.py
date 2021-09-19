@@ -41,7 +41,7 @@ def create_app():
 		return jsonify(result)
 
 	@app.route('/predict-api', methods=['POST'])
-	def predict():
+	def predict_api():
 		data = request.get_json()
 		result = make_prediction(data)
 
