@@ -76,9 +76,16 @@ $(document).on('click','.button',function(e){
         type: 'POST',
         success: function(response){
             //console.log(response);
-            prediction = response['result'];
-            $(".result").html("Prediction is: "+prediction);
+            score_proba = response['score_proba'];
+            prediction = response['prediction'];
+            result = response['result'];
+            $(".result").html("Prediction is: "+score_proba);
             $(".result").css({
+              "color": "#666666",
+              "text-align": "center"
+            });
+            $(".result2").html("Model Predicted you will be: "+prediction+"("+result+")");
+            $(".result2").css({
               "color": "#666666",
               "text-align": "center"
             });
