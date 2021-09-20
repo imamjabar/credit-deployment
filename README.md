@@ -2,8 +2,8 @@
 https://credit-scoring-imam.herokuapp.com/
 
 ## API
-API PATH: https://credit-scoring-imam.herokuapp.com/predict-api
-Using **POST** method, with arguments:
+- API ENDPOINT: https://credit-scoring-imam.herokuapp.com/predict-api
+- Using **POST** method, with arguments:
 
 Field | Description | Value
 ------|-------------|------
