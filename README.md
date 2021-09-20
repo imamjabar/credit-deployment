@@ -2,8 +2,8 @@
 https://credit-scoring-imam.herokuapp.com/
 
 ## API
-API PATH: https://credit-scoring-imam.herokuapp.com/predict-api
-Using **POST** method, with arguments:
+- API ENDPOINT: https://credit-scoring-imam.herokuapp.com/predict-api
+- Using **POST** method, with arguments:
 
 Field | Description | Value
 ------|-------------|------
@@ -15,7 +15,7 @@ loan_intent | Loan intent. | 'PERSONAL', 'EDUCATION', 'MEDICAL', 'VENTURE', 'HOM
 loan_grade | Loan grade. | 'A', 'B', 'C, 'D', 'E', 'F', or 'G'
 loan_amnt | Loan amount. | Integer
 loan_int_rate | Interest rate. | Float
-loan_percent_income | Percent income. | Float
+loan_percent_income | Percent income. | Float (Between 0 and 1)
 cb_person_default_on_file | Historical default. | 'Y', or 'N'
 cb_person_cred_hist_length | Credit history length. | Integer
 

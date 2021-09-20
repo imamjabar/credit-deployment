@@ -32,7 +32,7 @@ $(document).on('click','.button',function(e){
     	loan_amnt == ""||loan_int_rate == ""||loan_percent_income == ""||cb_person_default_on_file == ""||cb_person_cred_hist_length == ""){
       // you may allow it as per your model needs
       // you may mark some fields with * (star) and make sure they aren't empty here
-      alert("empty fields not allowed");
+      //alert("Empty fields not allowed");
     }
     else{
       // replace <username> with your pythonanywhere username
