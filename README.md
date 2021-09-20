@@ -1,25 +1,30 @@
 ## Live Access:
 https://credit-scoring-imam.herokuapp.com/
 
-## API
-- API ENDPOINT: https://credit-scoring-imam.herokuapp.com/predict-api
-- Using **POST** method, with arguments:
+## API Endpoint
+- **POST** /predict-api
+- Example: https://credit-scoring-imam.herokuapp.com/predict-api
+- Description: Predict whether the client will default or not after their loan application.
 
-Field | Description | Value
-------|-------------|------
-person_age | Age. | Integer
-person_income | Annual Income. | Integer 
-person_home_ownership | Home ownership. | 'RENT', 'MORTGAGE', 'OWN', or 'OTHER'
-person_emp_length | Employment length (in years) | Integer
-loan_intent | Loan intent. | 'PERSONAL', 'EDUCATION', 'MEDICAL', 'VENTURE', 'HOMEIMPROVEMENT', or 'DEBTCONSOLIDATION'
-loan_grade | Loan grade. | 'A', 'B', 'C, 'D', 'E', 'F', or 'G'
-loan_amnt | Loan amount. | Integer
-loan_int_rate | Interest rate. | Float
-loan_percent_income | Percent income. | Float (Between 0 and 1)
-cb_person_default_on_file | Historical default. | 'Y', or 'N'
-cb_person_cred_hist_length | Credit history length. | Integer
+### Request Headers:
+- **Content-Type**: application/json
 
-For example:
+### Body Params:
+Field | Description | Value | Required
+------|-------------|-------|---------
+person_age | Age. | Integer | Yes
+person_income | Annual Income. | Integer | Yes 
+person_home_ownership | Home ownership. | 'RENT', 'MORTGAGE', 'OWN', or 'OTHER' | Yes
+person_emp_length | Employment length (in years) | Integer | Yes
+loan_intent | Loan intent. | 'PERSONAL', 'EDUCATION', 'MEDICAL', 'VENTURE', 'HOMEIMPROVEMENT', or 'DEBTCONSOLIDATION' | Yes
+loan_grade | Loan grade. | 'A', 'B', 'C, 'D', 'E', 'F', or 'G' | Yes
+loan_amnt | Loan amount. | Integer | Yes
+loan_int_rate | Interest rate. | Float | Yes
+loan_percent_income | Percent income. | Float (Between 0 and 1) | Yes
+cb_person_default_on_file | Historical default. | 'Y', or 'N' | Yes
+cb_person_cred_hist_length | Credit history length. | Integer | Yes
+
+### Examples:
 
 ```
 {
@@ -37,7 +42,7 @@ For example:
 }
 ```
 
-## Response API
+## Response
 Field | Description
 ------|------------
 model | The machine learning model.
