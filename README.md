@@ -59,7 +59,8 @@ prediction | Predict class labels (0 is non default 1 is default).
 - Missing keys: `person_home_ownership`, `loan_intent`, `loan_grade`, or `cb_person_default_on_file` will return **400 Bad Request**.
 
 ### Missing Value handling:
-- Missing values will be mapped to `np.nan`.
+- Missing values: `person_age`, `person_income`, `person_emp_length`, `loan_amnt`, `loan_int_rate`, `loan_percent_income`, or `cb_person_cred_hist_length` will be mapped to `np.nan`.
+- Missing values or random values: `person_home_ownership`, `loan_intent`, `loan_grade`, or `cb_person_default_on_file` will return **400 Bad Request**.
 
 ### Handling outliers:
 - Weight of Evidence (WOE) will handle the outliers in the preprocessing step.

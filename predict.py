@@ -97,10 +97,21 @@ def formatting_data(raw_input):
     except KeyError as err:
       # If the categorical column missing: reject request
       if(col == 'person_home_ownership' or col == 'loan_intent' or col == 'loan_grade' or col == 'cb_person_default_on_file'):
-        abort(400, {'message': 'categorical column is missing'})
+        abort(400, {'error': 'categorical column is missing'})
       else:
         raw_input[col] = np.nan #handling as np.nan
-        
+  
+  categorical_columns = ['person_home_ownership', 'loan_intent', 'loan_grade', 'cb_person_default_on_file']
+  val = {
+    "person_home_ownership": ['RENT','MORTGAGE','OWN','OTHER'],
+    "loan_intent": ['EDUCATION', 'MEDICAL', 'VENTURE','PERSONAL','HOMEIMPROVEMENT','DEBTCONSOLIDATION'],
+    "loan_grade": ['A','B','C','D','E','F','G'],
+    "cb_person_default_on_file": ['Y','N']
+  }
+  for col in categorical_columns:
+    if(raw_input[col] not in val[col]):
+      abort(400, {'error': 'categorical column not match with the exact value'})
+
   # Outliers Handling: WOE (preprocessing) will handle the outliers
   # Missing Value Handling: Missing values will be mapped to np.nan. After that WOE will handle the nan value
   mapper_replace = {
